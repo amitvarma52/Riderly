@@ -1,0 +1,63 @@
+/** @format */
+
+.card {
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  width: 250px;
+  background-color: white;
+  margin: 0px 20px;
+  height: 360px;
+}
+.card img {
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40%;
+}
+.card h3,
+.card button {
+  padding: 0px 4px;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.card button {
+  font-size: 25px;
+  border: none;
+  padding: 15px 20px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+}
+.card button:hover {
+  background-color: rgb(11, 7, 0);
+  transition: 0.3s;
+}
+.year {
+  border-radius: 10px;
+  border: 2px solid grey;
+  width: 20%;
+  color: gray;
+  text-align: center;
+  font-family: cursive;
+  font-family: "Paytone One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.price {
+  font-size: 20px;
+  color: orange;
+}
+.price::after {
+  content: "/hour";
+  color: gray;
+}
+.location {
+  color: red;
+}

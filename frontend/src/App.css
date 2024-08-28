@@ -132,7 +132,7 @@ footer .wave {
   left: 0;
   width: 100%;
   height: 50px;
-  background: url('/frontend/public/wave.png');
+  background: url("/frontend/public/wave.png");
   background-size: 1000px 50px;
   filter: brightness(0); /* Apply brightness(0) to make the image black */
   opacity: 0.5;
@@ -178,4 +178,7 @@ footer .wave#wave1 {
   footer .wave {
     background-size: 500px 50px;
   }
+}
+body {
+  background: linear-gradient(to right, #159957, #155799);
 }
