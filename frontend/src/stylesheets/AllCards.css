@@ -20,3 +20,10 @@
     left: 20%;
     text-decoration: none;
 }
+
+@media (max-width: 600px) {
+  .card-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}

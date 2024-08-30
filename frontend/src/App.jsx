@@ -1,18 +1,18 @@
+/** @format */
 
-import { Outlet } from 'react-router-dom'
-import './App.css'
-import Header from './pages/Header'
-import Footer from './pages/Footer'
-import Card from './components/card'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./pages/Header";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
     <>
-      <Header/>
-      <Outlet/>
-      <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

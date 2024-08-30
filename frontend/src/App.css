@@ -10,7 +10,6 @@
 }
 
 .page-header {
-  /* background-color: var(--bgcolor); */
   background-color: #000000;
   padding: 1.4rem;
   display: flex;
@@ -93,8 +92,11 @@ footer .menu li {
   list-style: none;
 }
 
+footer .social-icon{
+  margin-bottom: 15px;
+}
 footer .social-icon li a {
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #fff;
   margin: 0 10px;
   display: inline-block;
@@ -106,7 +108,7 @@ footer .social-icon li a:hover {
 }
 
 footer .menu li a {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #fff;
   margin: 0 10px;
   display: inline-block;
@@ -142,6 +144,9 @@ footer .wave#wave1 {
   opacity: 0.91;
   bottom: 0;
   animation: animateWave 4s linear infinite;
+}
+.login-btn{
+  text-decoration: none;
 }
 @media screen and (max-width: 600px) {
   .nav-bar {
@@ -180,5 +185,5 @@ footer .wave#wave1 {
   }
 }
 body {
-  background: linear-gradient(to right, #159957, #155799);
+  background: linear-gradient(to right, #fc5c7d, #6a82fb);
 }

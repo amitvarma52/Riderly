@@ -26,10 +26,24 @@ const objectSlice = createSlice({
       location: "navi-mumbai",
     },
   ],
+})
+const userSlice = createSlice({
+  name: "user",
+  initialState: null,
+  reducers: {
+    initial: (state, action) => {
+      return action.payload;
+    },
+    delete: () => {
+      return null;
+    },
+  },
 });
 export const store=configureStore({
     reducer:{
-        object:objectSlice.reducer
+        object:objectSlice.reducer,
+        user:userSlice.reducer
     }
 })
 export const objectActions=objectSlice.actions
+export const userActions=userSlice.actions
