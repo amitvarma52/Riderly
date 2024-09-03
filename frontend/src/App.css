@@ -183,6 +183,12 @@ footer .wave#wave1 {
   footer .wave {
     background-size: 500px 50px;
   }
+  footer p{
+    font-size: 0.7rem;
+  }
+  footer .menu li a{
+    font-size: 0.9rem;
+  }
 }
 body {
   background: linear-gradient(to right, #fc5c7d, #6a82fb);
