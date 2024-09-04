@@ -29,5 +29,4 @@ const vendorSchema = mongoose.Schema(
   },
   { timeStamp: true }
 );
-
 export const vendorModel= mongoose.model("vendor", vendorSchema);

@@ -1,0 +1,67 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+CU:wght@100..400&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Playwrite+CU:wght@100..400&display=swap');
+.hero {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 50px 20px;
+  font-family: "Pacifico", cursive;
+  font-weight: 100;
+  font-style: normal;
+}
+.hero h2 {
+  color: rgb(22, 7, 229);
+  font-weight: 300;
+  font-size: 50px;
+}
+.hero button {  
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+  padding: 15px 20px;
+  margin-top: 25px ;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.hero h3 {
+  font-size: 20px;
+  font-weight: 100;
+  margin-top: 25px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.hero .hero-container,
+.hero img {
+  width: 35%;
+}
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  .hero h3 {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .hero .hero-container,
+  .hero img {
+    width: 85%;
+    margin: 15px 0px;
+  }
+  .hero img {
+    width: 85%;
+  }
+}

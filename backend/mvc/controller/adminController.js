@@ -9,8 +9,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 export const adminLoginController = async (req, res) => {
   try {
     const { adminName, adminPass } = req.body;
-    // console.log("JWT_SECRET:", JWT_SECRET);
-
     if (
       adminName === process.env.ADMIN_NAME &&
       adminPass === process.env.ADMIN_PASS
@@ -110,7 +108,6 @@ export const vendorUpdateController = async (req, res) => {
     });
   }
 };
-
 // delete
 export const vendorDelete = async (req, res) => {
   try {
@@ -135,4 +132,4 @@ export const vendorDelete = async (req, res) => {
       message: "Internal Server Error",
     });
   }
-};
+}

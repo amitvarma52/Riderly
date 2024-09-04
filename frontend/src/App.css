@@ -19,6 +19,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
+  padding: 50px 15px;
 }
 .logo {
   color: white;
@@ -189,7 +190,4 @@ footer .wave#wave1 {
   footer .menu li a{
     font-size: 0.9rem;
   }
-}
-body {
-  background: linear-gradient(to right, #fc5c7d, #6a82fb);
 }

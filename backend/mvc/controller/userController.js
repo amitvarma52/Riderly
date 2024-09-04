@@ -1,7 +1,5 @@
 import { comparePassword, hashPassword } from "../../helper/hidePassword.js";
 import { userModel } from "../model/userModel.js";
-
-
 // login
 export const loginController = async (req, res) => {
   try {
@@ -24,7 +22,7 @@ export const loginController = async (req, res) => {
   } catch (error) {
     res.status(500).send("Internal server error");
   }
-};
+}
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, location } = req.body;
