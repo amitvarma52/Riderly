@@ -17,9 +17,9 @@ export const adminLoginController = async (req, res) => {
       const token = jwt.sign({ id: adminName, role: "admin" }, JWT_SECRET, {
         expiresIn: "1h",
       });
-      return res.status(200).json({ token });
+      return res.status(200).json(token);
     } else {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json("Invalid admin name or password");
     }
   } catch (error) {
     console.error(error);
@@ -133,4 +133,4 @@ export const vendorDelete = async (req, res) => {
       message: "Internal Server Error",
     });
   }
-}
+};

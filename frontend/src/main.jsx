@@ -9,6 +9,8 @@ import { store } from "./store/Store.jsx";
 import MainPage from "./pages/MainPage.jsx";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
+import Admin from "./pages/Admin.jsx";
+import Vendor from "./pages/Vendor.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css'
 const router = createBrowserRouter([
   {
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
     ],
   },
+  { path: "/admin", element: <Admin /> },
+  { path: "/vendor", element: <Vendor /> },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
