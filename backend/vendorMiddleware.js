@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config(); 
 
-export const authMiddle = async (req, res, next) => {
+export const vendorAuth = async (req, res, next) => {
   try {
     const authHeader = req.headers["authorization"];
 

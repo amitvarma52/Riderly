@@ -4,6 +4,7 @@ import { hashPassword } from "../../helper/hidePassword.js";
 import { vendorModel } from "../model/adminModel.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import { vehicleModel } from "../model/vendorModel.js";
 dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET;
 export const adminLoginController = async (req, res) => {
@@ -65,7 +66,7 @@ export const getAllVendor = async (req, res) => {
 export const getVendorByID = async (req, res) => {
   try {
     const { name } = req.body;
-    const vendor = await vendorModel.find({ name });
+    const vendor = await vehicleModel.find({ name });
     if (vendor) return res.status(200).json(vendor);
     else return res.status(404).send("Vendor not found");
   } catch (error) {
@@ -112,7 +113,7 @@ export const vendorUpdateController = async (req, res) => {
 export const vendorDelete = async (req, res) => {
   try {
     const { name } = req.params;
-    const vendor = await vendorModel.findOne({ name });
+    const vendor = await vehicleModel.findOne({ name });
     if (vendor) {
       await vendor.deleteOne();
       return res.status(200).json({

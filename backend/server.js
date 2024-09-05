@@ -7,6 +7,7 @@ import morgan from "morgan";
 import { connect } from './db/DB.js'
 import userRouter from "./mvc/route/userRoute.js";
 import adminRouter from "./mvc/route/adminRoute.js";
+import vendorRoute from "./mvc/route/vendorRoute.js";
 const app = express();
 dotenv.config();
 // middlewares
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
 // api
 app.use("/api/v1/car-rental/user", userRouter);
 app.use("/api/v1/car-rental",adminRouter)
-// app.use("/api/v1/car-rental/post", carRouter);
+app.use("/api/v1/car-rental/vendor", vendorRoute);
 // listen
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

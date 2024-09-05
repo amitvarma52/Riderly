@@ -5,11 +5,11 @@ const vehicleShema = mongoose.Schema(
   {
     fromVendor: {
       type: String,
-      require: [true, "name is required"],
+      require: [true, "vendor name is required"],
     },
     vehicleName: {
       type: String,
-      require: [true, "email is required"],
+      require: [true, "vehicle is required"],
     },
     image: {
       type: String,
