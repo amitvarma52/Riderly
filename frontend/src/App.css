@@ -10,7 +10,7 @@
 }
 
 .page-header {
-  background-color: #000000;
+  background: linear-gradient(to right, #5f2c82, #49a09d);
   padding: 1.4rem;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@
 
 .login-btn {
   font-size: 0.9rem;
-  border: 1px solid black;
+  border: none;
   border-radius: 5px;
   padding: 0.9rem;
   background-color: blue;
@@ -93,7 +93,7 @@ footer .menu li {
   list-style: none;
 }
 
-footer .social-icon{
+footer .social-icon {
   margin-bottom: 15px;
 }
 footer .social-icon li a {
@@ -146,7 +146,7 @@ footer .wave#wave1 {
   bottom: 0;
   animation: animateWave 4s linear infinite;
 }
-.login-btn{
+.login-btn {
   text-decoration: none;
 }
 @media screen and (max-width: 600px) {
@@ -156,7 +156,7 @@ footer .wave#wave1 {
     top: 5rem;
     left: 0;
     width: 100%;
-    background-color: black;
+    background: linear-gradient(to right, #5f2c82, #49a09d);
     text-align: center;
     z-index: 2;
   }
@@ -184,10 +184,10 @@ footer .wave#wave1 {
   footer .wave {
     background-size: 500px 50px;
   }
-  footer p{
+  footer p {
     font-size: 0.7rem;
   }
-  footer .menu li a{
+  footer .menu li a {
     font-size: 0.9rem;
   }
 }

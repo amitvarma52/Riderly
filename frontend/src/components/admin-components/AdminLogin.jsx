@@ -4,10 +4,13 @@ import React, { useRef } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
-const AdminLogin = () => {
+const AdminLogin = ({ changeLoged, handleSetToken }) => {
   const adminName = useRef();
   const adminPass = useRef();
   const handleLogin = (e) => {
+    if (localStorage.getItem("admin-token")) {
+      changeLoged(true);
+    }
     e.preventDefault();
     fetch("http://localhost:8080/api/v1/car-rental/admin/login", {
       method: "post",
@@ -19,20 +22,27 @@ const AdminLogin = () => {
         adminPass: adminPass.current.value,
       }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data === "Invalid admin name or password") {
-          toast.error("Invalid Admin Name or Password", {
-            position: "top-center",
-            autoClose: 5000,
-          });
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
         } else {
-          toast.success("Admin Login In Succes", {
-            position: "top-center",
-            autoClose: 5000,
-          });
-          console.log(data);
+          throw new Error("login failed");
         }
+      })
+      .then((data) => {
+        changeLoged(true);
+        handleSetToken(data);
+        toast.success("Login successfully", {
+          position: "top-center",
+          autoClose: 5000,
+        });
+      })
+      .catch((error) => {
+        changeLoged(false);
+        toast.error("Invalid  Name or Password", {
+          position: "top-center",
+          autoClose: 5000,
+        });
       });
   };
 
@@ -59,15 +69,6 @@ const AdminLogin = () => {
               <i className="fas fa-lock"></i>
             </div>
           </div>
-          {/* <div className="option_div">
-            <div className="check_box">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </div>
-            <div className="forget_div">
-              <a href="#">Forgot password?</a>
-            </div>
-          </div> */}
           <div className="input_box button">
             <input type="submit" value="Login" />
           </div>

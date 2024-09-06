@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Playwrite+CU:wght@100..400&display=swap");
 .main_div {
   width: 365px;
-  background: rgb(183, 217, 231);
+  background: rgb(139, 185, 205); 
   padding: 30px;
   border-radius: 5px;
   margin: 25px;
@@ -11,15 +11,16 @@
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 300;
   font-style: normal;
+  background: linear-gradient(to right, #5f2c82, #49a09d);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    
 }
 .main_div .title {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
+  color: rgb(255, 255, 255);
 }
 .form {
   height: 100vh;
@@ -87,6 +88,7 @@ form .input_box {
   transition: all 0.3s ease;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 200;
+  
 }
 .input_box input:focus {
   border-color: #6200ff;
@@ -158,10 +160,10 @@ form a:hover {
     width: 85%;
   }
   .button input {
-   width: 98%;
+    width: 98%;
   }
   form {
-  margin-top: 25px;
-  padding-right: 5px;
-}
+    margin-top: 25px;
+    padding-right: 5px;
+  }
 }

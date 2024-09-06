@@ -10,21 +10,15 @@ export const authMiddle = async (req, res, next) => {
     const authHeader = req.headers["authorization"];
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return res.status(401).send({
-        success: false,
-        message: "Authorization header missing or malformed",
-      });
+      return res.status(401).send("Authorization header missing or malformed");
     }
 
     const token = authHeader.split(" ")[1];
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
-        console.log("JWT verification error:", err);
-        return res.status(401).send({
-          success: false,
-          message: "Unauthorized User",
-        });
+        // console.log("JWT verification error:", err);
+        return res.status(401).send("Unauthorized User");
       } else {
         console.log("Decoded JWT:", decoded);
         req.userId = decoded.id;

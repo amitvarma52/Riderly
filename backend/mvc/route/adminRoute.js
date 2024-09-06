@@ -23,5 +23,5 @@ adminRouter.delete("/admin/delete", authMiddle, vendorDelete);
 // get by id
 adminRouter.post("/admin/getOne", authMiddle, getVendorByID);
 // get all vendor
-adminRouter.post("/admin/allVendor", authMiddle, getAllVendor);
+adminRouter.get("/admin/allVendor", authMiddle, getAllVendor);
 export default adminRouter;
