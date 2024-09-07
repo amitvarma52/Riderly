@@ -27,7 +27,11 @@ const Admin = () => {
           handleSetToken={handleSetToken}
         />
       ) : (
-        <AdminLogin changeLoged={changeLoged} handleSetToken={handleSetToken} />
+        <AdminLogin
+          changeLoged={changeLoged}
+          adminToken={adminToken}
+          handleSetToken={handleSetToken}
+        />
       )}
     </>
   );

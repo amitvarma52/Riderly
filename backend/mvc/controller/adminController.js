@@ -31,6 +31,13 @@ export const vendorRegisterController = async (req, res) => {
   try {
     const { name, email, phone, location, password } = req.body;
     const hashedPassword = await hashPassword(password);
+    const exists=await vendorModel.findOne({name})
+    if(exists){
+      return res.status(400).json({
+        success: false,
+        error: "vendor already exists",
+      });
+    }
     const newVendor = new vendorModel({
       name,
       email,
@@ -79,9 +86,9 @@ export const getVendorByID = async (req, res) => {
 export const vendorUpdateController = async (req, res) => {
   try {
     const { name } = req.body;
-    let vendor = await vendorModel.find({ name });
+    let vendor = await vendorModel.findOne({ name });
     if (vendor) {
-      vendor.name = req.body.name || vendor.name;
+      vendor.name = req.body.updateName || vendor.name;
       vendor.email = req.body.email || vendor.email;
       vendor.phone = req.body.phone || vendor.phone;
       vendor.location = req.body.location || vendor.location;
@@ -112,8 +119,8 @@ export const vendorUpdateController = async (req, res) => {
 // delete
 export const vendorDelete = async (req, res) => {
   try {
-    const { name } = req.params;
-    const vendor = await vehicleModel.findOne({ name });
+    const { name } = req.body;
+    const vendor = await vendorModel.findOne({ name });
     if (vendor) {
       await vendor.deleteOne();
       return res.status(200).json({

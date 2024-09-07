@@ -19,7 +19,7 @@ adminRouter.post("/admin/register", authMiddle, vendorRegisterController);
 //upate
 adminRouter.put("/admin/update", authMiddle, vendorUpdateController);
 // delete
-adminRouter.delete("/admin/delete", authMiddle, vendorDelete);
+adminRouter.post("/admin/delete", authMiddle, vendorDelete);
 // get by id
 adminRouter.post("/admin/getOne", authMiddle, getVendorByID);
 // get all vendor
