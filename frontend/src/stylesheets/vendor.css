@@ -12,7 +12,7 @@
   box-shadow: 0px 8px 24px 0px rgba(140, 149, 159, 0.2);
   margin: 10px auto;
   list-style: none;
-  /* width: 92%; */
+
 }
 .vendor {
   flex-wrap: wrap;
@@ -26,6 +26,7 @@
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
   font-style: normal;
+    text-align: right;
 }
 .admin-table th {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -54,7 +55,7 @@
   left: 35%;
   background-color: rgb(204, 213, 247);
   padding: 25px 30px;
-  width: 30%;
+  width: 35%;
   top: 30vh;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

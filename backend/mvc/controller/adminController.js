@@ -35,7 +35,7 @@ export const vendorRegisterController = async (req, res) => {
     if(exists){
       return res.status(400).json({
         success: false,
-        error: "vendor already exists",
+        message: "vendor already exists",
       });
     }
     const newVendor = new vendorModel({
@@ -55,7 +55,7 @@ export const vendorRegisterController = async (req, res) => {
     console.error(error);
     return res.status(400).json({
       success: false,
-      error: "Vendor registration failed",
+      message: "Vendor registration failed",
     });
   }
 };

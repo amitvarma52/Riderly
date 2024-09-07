@@ -69,7 +69,6 @@ const Vendor = ({
         }
       )
       .then((response) => {
-        console.log("Success:", response.data);
         fetchData();
         toast.success("vendor delete successfully", {
           position: "top-center",

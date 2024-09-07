@@ -6,9 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 import Vendor from "./Vendor";
 import "../../stylesheets/vendor.css";
 import Loader from "../Loader";
+import AdminForm from "./AdminForm";
 const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
   const [vendors, setVendors] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [edit, setEdit] = useState(false);
   const fetchData = () => {
     if (adminToken) {
       setLoader(true);
@@ -22,7 +24,6 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
         .then((res) => res.json())
         .then((data) => {
           setLoader(false);
-          console.log(data)
           setVendors(data);
         })
         .catch((error) => {
@@ -43,14 +44,24 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
     handleSetToken(null);
     setVendors([]);
   };
+  const changeEdit = (value) => {
+    setEdit(value);
+  };
   return (
     <>
       <ToastContainer />
       <div className="admin-header">
-        <button>+</button>
+        <button onClick={() => setEdit(true)}>+</button>
         <h1>Admin Page</h1>
         <button onClick={handleLogout}>Log-out</button>
       </div>
+      {edit && (
+        <AdminForm
+          changeEdit={changeEdit}
+          adminToken={adminToken}
+          fetchData={fetchData}
+        />
+      )}
       <h1 className="vendors-list"> VENDORS LIST</h1>
       <table className="admin-table">
         <thead>
