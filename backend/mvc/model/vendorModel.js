@@ -16,7 +16,7 @@ const vehicleShema = mongoose.Schema(
       require: [true, "image link is required"],
     },
     Date: {
-      type: String,
+      type: Number,
       require: [true, "date is required"],
     },
     price: {

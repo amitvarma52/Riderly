@@ -28,7 +28,7 @@ const Vendor = ({
         "http://localhost:8080/api/v1/car-rental/admin/update",
         {
           name: name,
-          updateName: updateName.current.value,
+          updateName:name,
           email: updateEmail.current.value,
           location: updateLocation.current.value,
           phone: updatePhone.current.value,
@@ -105,13 +105,13 @@ const Vendor = ({
             <form action="" className="edit-form" onSubmit={handleEdit}>
               <h1>EDIT VENDOR</h1>
               <MdCancel onClick={() => setEdit(false)} />
-              <input
+              {/* <input
                 ref={updateName}
                 name="updateName"
                 type="text"
                 placeholder="name"
                 defaultValue={name}
-              />
+              /> */}
               <input
                 ref={updateEmail}
                 name="email"

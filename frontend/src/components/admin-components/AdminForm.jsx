@@ -48,7 +48,7 @@ const AdminForm = ({ changeEdit, adminToken, fetchData }) => {
       <form action="" className="edit-form" onSubmit={handleAddVendor}>
         <ToastContainer />
         <h1>Add Vendor</h1>
-        <MdCancel onClick={() => changeEdit(false)} />
+        <MdCancel color="white" onClick={() => changeEdit(false)} />
         <input ref={Name} name="Name" type="text" placeholder="name" required />
         <input
           ref={Email}

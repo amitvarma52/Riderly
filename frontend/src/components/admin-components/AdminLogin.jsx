@@ -8,9 +8,6 @@ const AdminLogin = ({ changeLoged, handleSetToken }) => {
   const adminName = useRef();
   const adminPass = useRef();
   const handleLogin = (e) => {
-    if (localStorage.getItem("admin-token")) {
-      changeLoged(true);
-    }
     e.preventDefault();
     fetch("http://localhost:8080/api/v1/car-rental/admin/login", {
       method: "post",

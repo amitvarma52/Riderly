@@ -17,5 +17,5 @@ vendorRoute.post("/registerVehicle", vendorAuth, vehicleRegisterController);
 // get all vehicle
 vendorRoute.post("/getAllVehicle", vendorAuth, getAllVehicle);
 //Delete vehicle
-vendorRoute.delete("/deleteVehicle", vendorAuth, vehicleDelete);
+vendorRoute.post("/deleteVehicle", vendorAuth, vehicleDelete);
 export default vendorRoute;

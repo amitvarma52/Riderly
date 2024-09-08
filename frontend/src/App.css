@@ -149,6 +149,14 @@ footer .wave#wave1 {
 .login-btn {
   text-decoration: none;
 }
+.vehicle-container{
+  padding: 50px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 @media screen and (max-width: 600px) {
   .nav-bar {
     display: none;
