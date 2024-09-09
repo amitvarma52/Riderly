@@ -1,0 +1,113 @@
+/* General Styles */
+.bike-rental-info {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.bike-rental-info h1 {
+  text-align: center;
+  color: #4CAF50; /* Primary color for headings */
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.steps, .faqs {
+  margin-bottom: 30px;
+}
+
+.steps h2, .faqs h2 {
+  font-size: 2em;
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.steps ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.steps li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.steps .icon {
+  margin-right: 15px;
+  color: #4CAF50; /* Primary color for icons */
+  font-size: 1.5em;
+}
+
+.faq-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.faqs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faqs li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.faqs strong {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bike-rental-info h1 {
+    font-size: 2em;
+  }
+
+  .steps h2, .faqs h2 {
+    font-size: 1.5em;
+  }
+
+  .steps li, .faqs li {
+    font-size: 1em;
+  }
+
+  .faq-title {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .bike-rental-info {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .steps h2, .faqs h2 {
+    font-size: 1.2em;
+  }
+
+  .steps li, .faqs li {
+    font-size: 0.9em;
+  }
+
+  .faq-title {
+    font-size: 1em;
+  }
+}

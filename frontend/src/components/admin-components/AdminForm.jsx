@@ -69,6 +69,7 @@ const AdminForm = ({ changeEdit, adminToken, fetchData }) => {
           name="phone"
           type="number"
           placeholder="phone"
+          maxlength="10"
           required
         />
         <input

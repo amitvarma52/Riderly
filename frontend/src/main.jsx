@@ -11,7 +11,7 @@ import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import Admin from "./pages/Admin.jsx";
 import VendorPage from "./pages/VendorPage.jsx";
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import About from "./components/About.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
       { path: "/", element: <MainPage /> },
       { path: "/register", element: <Register /> },
       { path: "/login", element: <Login /> },
+      { path: "/about", element: <About/> },
     ],
   },
   { path: "/admin", element: <Admin /> },
