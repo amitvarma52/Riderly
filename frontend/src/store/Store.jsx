@@ -34,7 +34,7 @@ const userSlice = createSlice({
     initial: (state, action) => {
       return action.payload;
     },
-    delete: () => {
+    delete: (state,action) => {
       return null;
     },
   },

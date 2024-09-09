@@ -12,6 +12,7 @@ const AllCards = ({ name, object,to }) => {
       <div className="card-container">
         {object.map((element) => (
           <Card
+          key={element.url}
             url={element.url}
             name={element.name}
             year={element.year}

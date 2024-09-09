@@ -5,14 +5,24 @@ import { useState } from "react";
 import { useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { userActions } from "../store/Store";
 const Header = () => {
+  const user =useSelector(state=>state.user)
+  const dispatch=useDispatch()
   const navbar = useRef();
   const [hamburger,setHamburger]=useState(false)
   function onMenuClick() {
     var responsive_className_name = "responsive";
     navbar.current.classList.toggle(responsive_className_name);
     setHamburger(!hamburger)
+  }
+  const handleLogout=(e)=>{
+    e.preventDefault()
+    localStorage.removeItem("rental-user")
+    localStorage.removeItem("rental-token")
+    dispatch(userActions.delete())
   }
   return (
     <div className="page-header">
@@ -27,14 +37,20 @@ const Header = () => {
         <Link to="/">Home</Link>
         <a href="#">All</a>
         <a href="#">Trending</a>
-        <Link to='/about'>About</Link>
+        <Link to="/about">About</Link>
         <a href="#">Contact</a>
       </div>
 
       <div className="header-right">
-        <Link className="login-btn" to="/register">
-          Register
-        </Link>
+        {user ? (
+          <Link className="login-btn" style={{ backgroundColor: "maroon" }} onClick={handleLogout} to='/login'>
+            Log out
+          </Link>
+        ) : (
+          <Link className="login-btn" to="/register">
+            Register
+          </Link>
+        )}
       </div>
     </div>
   );

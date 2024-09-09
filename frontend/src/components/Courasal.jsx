@@ -2,7 +2,7 @@ import React from 'react'
 import '../stylesheets/carousal.css'
 const Courasal = () => {
   return (
-    <div class="hero">
+    <div className="hero">
       <div className="hero-container">
         <h2>Bike Rental</h2>
         <h3>

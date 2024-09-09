@@ -25,7 +25,7 @@ export const vendorLoginController = async (req, res) => {
       { id: vendor.name, role: "to add products" },
       VENDOR_SECRET,
       {
-        expiresIn: "1h",
+        expiresIn: "10h",
       }
     );
     res.status(200).send({
