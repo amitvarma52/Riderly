@@ -4,33 +4,21 @@ import axios from "axios";
 import React, { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../store/Store";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const email = useRef();
   const password = useRef();
-  useEffect(() => {
-    if (
-      localStorage.getItem("rental-user") &&
-      localStorage.getItem("rental-token")
-    ) {
-      dispatch(
-        userActions.initial(JSON.parse(localStorage.getItem("rental-user")))
-      );
-      navigate("/");
-    }
-  });
-
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const user = useSelector((state) => state.user);
+  const Login = (email, password) => {
     axios
       .post(
         "http://localhost:8080/api/v1/car-rental/user/login",
         {
-          email: email.current.value,
-          password: password.current.value,
+          email: email,
+          password: password,
         },
         {
           headers: {
@@ -59,6 +47,23 @@ const Login = () => {
           autoClose: 5000,
         });
       });
+  };
+  
+  useEffect(() => {
+    if (
+      localStorage.getItem("rental-user") &&
+      localStorage.getItem("rental-token")
+    ) {
+      dispatch(
+        userActions.initial(JSON.parse(localStorage.getItem("rental-user")))
+      );
+      navigate("/");
+    }
+  });
+  
+  const handleLogin = (e) => {
+    e.preventDefault();
+    Login(email.current.value, password.current.value);
   };
   return (
     <>

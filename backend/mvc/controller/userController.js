@@ -22,7 +22,7 @@ export const loginController = async (req, res) => {
       return res.status(400).send("Invalid credentials");
     }
     const token = jwt.sign(
-      { id: user.name, role: "to add products" },
+      { id: user._id, role: "to add products" },
       VENDOR_SECRET,
       {
         expiresIn: "10h",

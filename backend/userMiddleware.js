@@ -30,7 +30,6 @@ export const userAuth = async (req, res, next) => {
         req.userId = decoded.id;
         req.userType = decoded.role; // Changed from `userType` to `role` for consistency
         console.log(`User ID: ${req.userId}, User Type: ${req.userType}`);
-
         next();
       }
     });

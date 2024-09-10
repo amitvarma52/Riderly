@@ -10,7 +10,7 @@ const AllCards = ({ name, object,to }) => {
     <div className="container">
       <h1>{name}</h1>
       <div className="card-container">
-        {object.map((element) => (
+        {object.length==0 && object.map((element) => (
           <Card
           key={element.url}
             url={element.url}

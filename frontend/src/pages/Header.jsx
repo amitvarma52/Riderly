@@ -6,11 +6,13 @@ import { useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { userActions } from "../store/Store";
+import { Link, useNavigate } from "react-router-dom";
+import { objectActions, userActions } from "../store/Store";
 const Header = () => {
   const user =useSelector(state=>state.user)
+  console.log(user)
   const dispatch=useDispatch()
+  const navigate=useNavigate()
   const navbar = useRef();
   const [hamburger,setHamburger]=useState(false)
   function onMenuClick() {
@@ -23,6 +25,8 @@ const Header = () => {
     localStorage.removeItem("rental-user")
     localStorage.removeItem("rental-token")
     dispatch(userActions.delete())
+    dispatch(objectActions.delete())
+    navigate('login')
   }
   return (
     <div className="page-header">
@@ -35,7 +39,7 @@ const Header = () => {
 
       <div id="navigation-bar" className="nav-bar" ref={navbar}>
         <Link to="/">Home</Link>
-        <a href="#">All</a>
+        <Link to="all">All</Link>
         <a href="#">Trending</a>
         <Link to="/about">About</Link>
         <a href="#">Contact</a>

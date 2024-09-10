@@ -12,6 +12,7 @@ import Login from "./components/Login.jsx";
 import Admin from "./pages/Admin.jsx";
 import VendorPage from "./pages/VendorPage.jsx";
 import About from "./components/About.jsx";
+import AllPage from "./components/AllPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       { path: "/", element: <MainPage /> },
       { path: "/register", element: <Register /> },
       { path: "/login", element: <Login /> },
-      { path: "/about", element: <About/> },
+      { path: "/about", element: <About /> },
+      { path: "/all", element: <AllPage /> },
     ],
   },
   { path: "/admin", element: <Admin /> },

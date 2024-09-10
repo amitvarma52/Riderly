@@ -7,7 +7,7 @@
   width: 270px;
   background-color: white;
   margin: 20px;
-  height: 330px;
+  /* height: 330px; */
 }
 .card img {
   width: 100%;
@@ -37,7 +37,7 @@
   color: white;
   border-radius: 10px;
   width: 70%;
-  margin-top: 17px;
+  /* margin-top: 17px; */
   margin-left: 40px;
 }
 .card button:hover {
