@@ -10,12 +10,12 @@ const AllCards = ({ name, object,to }) => {
     <div className="container">
       <h1>{name}</h1>
       <div className="card-container">
-        {object.length==0 && object.map((element) => (
+        {!object.length==0 && object.map((element) => (
           <Card
           key={element.url}
-            url={element.url}
-            name={element.name}
-            year={element.year}
+            url={element.image}
+            name={element.vehicleName}
+            year={element.Date}
             price={element.price}
             location={element.location}
           />
