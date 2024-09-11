@@ -19,7 +19,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  padding: 40px 15px;
+  padding: 30px 15px;
 }
 .logo {
   color: white;
@@ -161,7 +161,7 @@ footer .wave#wave1 {
   .nav-bar {
     display: none;
     position: absolute;
-    top: 5rem;
+    top: 10rem;
     left: 0;
     width: 100%;
     background: linear-gradient(to right, #5f2c82, #49a09d);

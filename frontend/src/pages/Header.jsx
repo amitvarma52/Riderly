@@ -62,7 +62,7 @@ const Header = () => {
             {/* Move user photo above the logout button */}
             <img
               src={
-                "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                "https://cdn3d.iconscout.com/3d/premium/thumb/profile-3d-icon-download-in-png-blend-fbx-gltf-file-formats--user-account-man-person-people-interface-pack-icons-6581822.png?f=webp"
               } // Assuming `user.photo` exists
               alt="User"
               className="user-photo"
@@ -70,8 +70,8 @@ const Header = () => {
               style={{
                 cursor: "pointer",
                 borderRadius: "50%",
-                width: "50px",
-                marginBottom: "10px",
+                width: "60px",
+                marginBottom: "5px",
               }} // Adjusted margin
             />
             <Link
@@ -89,7 +89,7 @@ const Header = () => {
                 <div className="user-info-content">
                   <img
                     src={
-                      "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+                      "https://cdn3d.iconscout.com/3d/premium/thumb/profile-3d-icon-download-in-png-blend-fbx-gltf-file-formats--user-account-man-person-people-interface-pack-icons-6581822.png?f=webp"
                     } // Display the user's photo
                     alt={user.name}
                     style={{ width: "100px", borderRadius: "50%" }}
