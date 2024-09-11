@@ -1,0 +1,105 @@
+.user-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker backdrop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+  animation: fadeIn 0.3s ease-in-out; /* Smooth appearance */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.user-info-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Larger shadow */
+  text-align: center;
+  width: 400px; /* Wider modal */
+  position: relative; /* Allows absolute positioning of close button */
+  animation: scaleIn 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.user-info-content img {
+  width: 120px; /* Larger user image */
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #f5f5f5; /* Add a white border around the image */
+}
+
+.user-info-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.user-info-content p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #e74c3c; /* Red close button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius:20px; /* Circular close button */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.login-btn {
+  background-color: #3498db; /* Light blue button for logout */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* User photo */
+.user-photo {
+  margin-bottom: 10px; /* Add space between the user photo and logout button */
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ddd; /* Add a border around the image */
+}

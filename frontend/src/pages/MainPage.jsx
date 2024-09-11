@@ -53,6 +53,9 @@ const MainPage = () => {
       getObject(localStorage.getItem("rental-token"));
     } else {
       navigate("/login");
+      localStorage.removeItem("rental-user")
+      localStorage.removeItem("rental-token");
+      dispatch(userActions.delete())
     }
   }, []);
   return (
