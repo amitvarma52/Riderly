@@ -14,6 +14,7 @@ const AllCards = ({ name, object, to }) => {
           object.map((element) => (
             <Card
               key={element._id}
+              fromVendor={element.fromVendor}
               url={element.image}
               name={element.vehicleName}
               year={element.Date}

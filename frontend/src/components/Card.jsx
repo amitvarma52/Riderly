@@ -10,7 +10,6 @@ const Card = ({ fromVendor, url, name, year, price, location }) => {
   const user=useSelector(state=>state.user)
   const handleRent = (e) => {
     e.preventDefault()
-    console.log(fromVendor)
     axios
       .post(
         "http://localhost:8080/api/v1/car-rental/user/sendMessage",

@@ -154,7 +154,7 @@ footer .wave#wave1 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 @media screen and (max-width: 600px) {
@@ -168,7 +168,9 @@ footer .wave#wave1 {
     text-align: center;
     z-index: 2;
   }
-
+.vehicle-container .card{
+  margin: 20px 40px;
+}
   .nav-bar.responsive {
     display: block;
   }
