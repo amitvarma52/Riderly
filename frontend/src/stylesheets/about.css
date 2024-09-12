@@ -9,7 +9,7 @@
 
 .bike-rental-info h1 {
   text-align: center;
-  color: #4CAF50; /* Primary color for headings */
+  color: #109a04; /* Primary color for headings */
   margin-bottom: 30px;
   font-size: 2.5em;
 }
@@ -20,7 +20,7 @@
 
 .steps h2, .faqs h2 {
   font-size: 2em;
-  color: #4CAF50;
+  color: #4686ba;
   border-bottom: 2px solid #4CAF50;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -41,7 +41,7 @@
 
 .steps .icon {
   margin-right: 15px;
-  color: #4CAF50; /* Primary color for icons */
+  color: #0084ff; /* Primary color for icons */
   font-size: 1.5em;
 }
 
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   font-size: 1.5em;
-  color: #4CAF50;
+  color: #164786;
   border-bottom: 2px solid #4CAF50;
   padding-bottom: 10px;
   margin-bottom: 20px;

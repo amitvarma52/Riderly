@@ -13,7 +13,7 @@ const Courasal = () => {
         <button>Learn more</button>
       </div>
       <img
-        src="https://unblast.com/wp-content/uploads/2020/09/Car-Rent-Vector-Illustration.jpg"
+        src="https://us.123rf.com/450wm/stockgiu/stockgiu1903/stockgiu190304263/124737009-delivery-guy-in-motorcycle-with-map-vector-illustration-graphic-design.jpg?ver=6"
         alt=""
       />
     </div>

@@ -1,6 +1,6 @@
 /** @format */
 
-import { feedbackModel } from "../model/feedbackModel";
+import { feedbackModel } from "../model/feedbackModel.js";
 
 export const sendFeedback= async (req, res) => {
   try {

@@ -22,11 +22,18 @@
   padding: 30px 15px;
 }
 .logo {
-  color: white;
   align-self: center;
-  margin-left: 1.2rem;
-  font-size: 2.5rem;
+  margin-left: 1.1rem;
+  font-size: 2rem;
   font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  color: #f2f2f2;
+  position: relative;
+}
+
+.logo::first-letter {
+  color: #ff6347;
+  font-size: 2.5rem;
 }
 
 .nav-bar {
@@ -38,6 +45,7 @@
   padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   font-size: 1.1rem;
 }
 
@@ -149,7 +157,7 @@ footer .wave#wave1 {
 .login-btn {
   text-decoration: none;
 }
-.vehicle-container{
+.vehicle-container {
   padding: 50px 0px;
   width: 100%;
   display: flex;
@@ -161,16 +169,17 @@ footer .wave#wave1 {
   .nav-bar {
     display: none;
     position: absolute;
-    top: 6rem;
+    top: 9rem;
     left: 0;
     width: 100%;
     background: linear-gradient(to right, #5f2c82, #49a09d);
     text-align: center;
     z-index: 2;
   }
-.vehicle-container .card{
-  margin: 20px 40px;
-}
+
+  .vehicle-container .card {
+    margin: 20px 40px;
+  }
   .nav-bar.responsive {
     display: block;
   }
@@ -183,7 +192,6 @@ footer .wave#wave1 {
   .menu-icon {
     display: block;
     z-index: 2;
-    margin-left: 25px;
   }
   .login-btn {
     padding: 10px 20px;

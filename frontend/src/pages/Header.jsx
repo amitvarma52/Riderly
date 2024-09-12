@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <div className="page-header">
       <div className="logo">
-        <p>Logo</p>
+        <p>Riderly</p>
       </div>
       <a id="menu-icon" className="menu-icon" onClick={onMenuClick}>
         {hamburger ? <GrClose size={30} /> : <GiHamburgerMenu size={30} />}
@@ -42,9 +42,9 @@ const Header = () => {
       <div id="navigation-bar" className="nav-bar" ref={navbar}>
         <Link to="/">Home</Link>
         <Link to="all">All</Link>
-        <a href="#">Trending</a>
+        {/* <a href="#">Trending</a> */}
         <Link to="/about">About</Link>
-        <a href="#">Contact</a>
+        <Link to="feedback">Feedback</Link>
       </div>
 
       <div
