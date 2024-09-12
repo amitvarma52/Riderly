@@ -13,7 +13,7 @@ const AllCards = ({ name, object, to }) => {
         {!object.length == 0 &&
           object.map((element) => (
             <Card
-              key={element.url}
+              key={element._id}
               url={element.image}
               name={element.vehicleName}
               year={element.Date}

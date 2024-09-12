@@ -1,6 +1,5 @@
 /** @format */
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AllCards from "../components/AllCards.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import Courosal from "../components/Courasal.jsx";
@@ -8,13 +7,43 @@ import { useNavigate } from "react-router-dom";
 import { objectActions, userActions } from "../store/Store.jsx";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "../stylesheets/message.css";
 const MainPage = () => {
   const navigate = useNavigate();
-  const user=useSelector(state=>state.user)
+  const user = useSelector((state) => state.user);
   const objects = useSelector((state) => state.object);
   const allObjects = objects.slice(0, 3);
-  const locationObjects=objects.filter(element=>element.location==user.location).slice(0,3)
+  const locationObjects = objects
+    .filter((element) => element.location === user.location)
+    .slice(0, 3);
   const dispatch = useDispatch();
+  const [message, setMessage] = useState([]);
+  const [showMessages, setShowMessages] = useState(false); // Toggle message visibility
+  useEffect(() => {
+    if (user) {
+      axios
+        .post(
+          "http://localhost:8080/api/v1/car-rental/user/userMessage",
+          {
+            user: user.name,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("rental-token"),
+            },
+            timeout: 10000,
+          }
+        )
+        .then((response) => {
+          setMessage(response.data);
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+    }
+  },);
+
   const getObject = (token) => {
     axios
       .get("http://localhost:8080/api/v1/car-rental/user/userAllVehicles", {
@@ -25,7 +54,6 @@ const MainPage = () => {
         timeout: 10000,
       })
       .then((response) => {
-        console.log(response.data);
         dispatch(objectActions.initial(response.data));
         toast.success(response, {
           position: "top-center",
@@ -36,12 +64,14 @@ const MainPage = () => {
         dispatch(userActions.delete());
         localStorage.removeItem("rental-user");
         localStorage.removeItem("rental-token");
+        navigate("/login");
         toast.error(error.response.data.message, {
           position: "top-center",
           autoClose: 5000,
         });
       });
   };
+
   useEffect(() => {
     if (
       localStorage.getItem("rental-user") &&
@@ -53,17 +83,66 @@ const MainPage = () => {
       getObject(localStorage.getItem("rental-token"));
     } else {
       navigate("/login");
-      localStorage.removeItem("rental-user")
+      localStorage.removeItem("rental-user");
       localStorage.removeItem("rental-token");
-      dispatch(userActions.delete())
+      dispatch(userActions.delete());
     }
-  }, []);
+  }, [dispatch, navigate]);
+
+  const handleShowMessages = () => {
+    setShowMessages((prevState) => !prevState);
+  };
+
   return (
     <>
       <ToastContainer />
       <Courosal />
       <AllCards name="All" object={allObjects} to={"/all"} />
-      <AllCards name="From Your Location" object={locationObjects} to={"/all"} />
+      <AllCards
+        name="From Your Location"
+        object={locationObjects}
+        to={"/all"}
+      />
+
+      {/* Show the button if messages are available */}
+      {message.length > 0 && (
+        <>
+          <button className="message-btn" onClick={handleShowMessages}>
+            {showMessages ? "Hide Bookings" : "Show Bookings"}
+          </button>
+
+          {/* Conditionally render the message table */}
+          {showMessages && (
+            <div className="message-table-container">
+              <h4>User Messages</h4>
+              <table className="message-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                    {/* <th>Email</th> */}
+                    <th>Location</th>
+                    <th>Vehicle</th>
+                    <th>Vendor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {message.map((msg, index) => (
+                    <tr key={index}>
+                      <td>{new Date(msg.date).toLocaleDateString()}</td>
+                      <td>{msg.user}</td>
+                      {/* <td>{msg.email}</td> */}
+                      <td>{msg.location}</td>
+                      <td>{msg.vehicleName}</td>
+                      <td>{msg.vendor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </>
+      )}
     </>
   );
 };

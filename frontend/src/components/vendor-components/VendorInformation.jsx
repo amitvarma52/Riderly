@@ -30,7 +30,6 @@ const VendorInformation = ({
         .then((res) => res.json())
         .then((data) => {
           setLoader(false);
-          console.log(data);
           setVehicles(data);
         })
         .catch((error) => {

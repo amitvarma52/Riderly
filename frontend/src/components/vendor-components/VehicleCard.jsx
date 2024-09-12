@@ -15,7 +15,6 @@ const VehicleCard = ({
 }) => {
   const handleDelete = (e) => {
     e.preventDefault();
-    console.log("delete")
     axios
       .post(
         "http://localhost:8080/api/v1/car-rental/vendor/deleteVehicle",

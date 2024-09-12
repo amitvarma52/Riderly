@@ -29,7 +29,6 @@ const Login = () => {
       )
       .then((response) => {
         navigate("/");
-        console.log(response.data);
         localStorage.setItem("rental-user", JSON.stringify(response.data.user));
         localStorage.setItem("rental-token", response.data.token);
         dispatch(
@@ -41,14 +40,13 @@ const Login = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.response.data, {
           position: "top-center",
           autoClose: 5000,
         });
       });
   };
-  
+
   useEffect(() => {
     if (
       localStorage.getItem("rental-user") &&
@@ -57,10 +55,14 @@ const Login = () => {
       dispatch(
         userActions.initial(JSON.parse(localStorage.getItem("rental-user")))
       );
-      navigate("/");
+      navigate("/"); // This should run only when user is authenticated
     }
-  });
-  
+
+    if (user) {
+      navigate("/"); // This should only run when the user state is updated
+    }
+  }, [user, dispatch, navigate]); // Add dependencies to avoid the infinite loop
+
   const handleLogin = (e) => {
     e.preventDefault();
     Login(email.current.value, password.current.value);

@@ -9,7 +9,6 @@ import { objectActions, userActions } from "../store/Store";
 import "../stylesheets/user.css";
 const Header = () => {
   const user = useSelector((state) => state.user);
-  console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navbar = useRef();
