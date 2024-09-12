@@ -4,29 +4,27 @@
 
 .vendor,
 .header-vendor {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around; */
   background-color: rgb(209, 216, 222);
-  border-radius: 10px;
   box-shadow: 0px 8px 24px 0px rgba(140, 149, 159, 0.2);
   margin: 10px auto;
   list-style: none;
-
+  text-align: center;
 }
 .vendor {
   flex-wrap: wrap;
+  text-align: center;
 }
 .vendor li,
 .admin-table th,
 .admin-table tr td {
-  /* width: 20%; */
-  padding: 15px 10px;
-  /* border: 2px solid black; */
+ flex-grow: 1;  padding: 15px 10px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
   font-style: normal;
-    text-align: right;
+    text-align: center;
 }
 .admin-table th {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -45,7 +43,7 @@
   font-weight: 800;
   font-style: normal;
   text-align: center;
-  padding: 0px;
+  padding: 10px;
 }
 .edit-form {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -62,6 +60,7 @@
   width: 35%;
   top: 30vh;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
 }
 
 .edit-form input {
@@ -74,6 +73,7 @@
   margin: 5px ;
   /* background-color: transparent; */
   align-self: center;
+  border-radius: 10px;
   /* border: 2px solid white; */
 }
 .edit-form input::placeholder{
@@ -96,7 +96,7 @@
 }
 .edit-form h1 {
   font-size: 25px;
-  color: black;
+  color: rgb(255, 255, 255);
   padding: 5px;
   text-align: center;
 }

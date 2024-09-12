@@ -1,0 +1,87 @@
+/* Floating Feedback Button */
+.feedback-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #007bff; /* Bright blue button */
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for elevation */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000; /* Make sure the button stays on top */
+}
+
+.feedback-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.feedback-btn:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Feedback Table Container */
+.feedback-table-container {
+  margin-top: 20px;
+  overflow-x: auto; /* For responsive behavior */
+}
+
+/* Feedback Table Styles */
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  border-radius: 8px; /* Rounded corners for table */
+  overflow: hidden; /* Clip content within rounded corners */
+}
+
+.feedback-table th,
+.feedback-table td {
+  border: 1px solid #e0e0e0; /* Slightly lighter border color */
+  padding: 16px;
+  text-align: left;
+  color: #333;
+}
+
+.feedback-table th {
+  background-color: #007bff; /* Blue background for headers */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase text for headers */
+  letter-spacing: 0.5px; /* Slight letter spacing */
+}
+
+.feedback-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly different stripe color */
+}
+
+.feedback-table tr:nth-child(odd) {
+  background-color: #ffffff; /* White background for odd rows */
+}
+
+.feedback-table tr:hover {
+  background-color: #e3f2fd; /* Light blue background on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Table for mobile devices */
+@media (max-width: 768px) {
+  .feedback-table th,
+  .feedback-table td {
+    padding: 12px;
+  }
+
+  .feedback-table th {
+    font-size: 0.9rem;
+  }
+
+  .feedback-table td {
+    font-size: 0.8rem;
+  }
+}

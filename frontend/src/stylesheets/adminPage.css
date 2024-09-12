@@ -29,16 +29,17 @@
   border: none;
 }
 .admin-header h1{
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 50px;
-  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  color: #f2f2f2;
+ 
 }
-.admin-header h1::before{
-  content: '.';
-  color: black;
+.admin-header h1::first-letter {
+  color: #ff6347;
+  font-size: 2.5rem;
 }
+
 .admin-header button:hover{
     background-color:black;
     transition: 0.4s;
