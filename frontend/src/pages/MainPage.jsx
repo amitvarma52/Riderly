@@ -42,7 +42,7 @@ const MainPage = () => {
           console.log(error)
         });
     }
-  },);
+  },[]);
 
   const getObject = (token) => {
     axios
@@ -119,7 +119,7 @@ const MainPage = () => {
                 <thead>
                   <tr>
                     <th>Date</th>
-                    <th>User</th>
+                    {/* <th>User</th> */}
                     {/* <th>Email</th> */}
                     <th>Location</th>
                     <th>Vehicle</th>
@@ -130,7 +130,7 @@ const MainPage = () => {
                   {message.map((msg, index) => (
                     <tr key={index}>
                       <td>{new Date(msg.date).toLocaleDateString()}</td>
-                      <td>{msg.user}</td>
+                      {/* <td>{msg.user}</td> */}
                       {/* <td>{msg.email}</td> */}
                       <td>{msg.location}</td>
                       <td>{msg.vehicleName}</td>

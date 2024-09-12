@@ -40,7 +40,7 @@ export const vendorMessage = async (req, res) => {
     }
     const messages = await messageModel.find({ vendor });
     if (!messages) {
-      return res.status(400).json("no messages available");
+      return res.status(400).json("no bookings yet");
     }
 
     return res.status(200).json(messages);
@@ -62,11 +62,24 @@ export const userMessage = async (req, res) => {
     }
     const messages = await messageModel.find({ user });
     if (!messages) {
-      return res.status(400).json("no messages available");
+      return res.status(400).json("no bookings yet");
     }
     return res.status(200).json(messages);
   } catch (error) {
-    console.log(error);
+    res.status(400).json({
+      success: false,
+      error,
+    });
+  }
+};
+export const allMessage = async (req, res) => {
+  try {
+    const messages = await messageModel.find({});
+    if (!messages) {
+      return res.status(400).json("no bookings yet");
+    }
+    return res.status(200).json(messages);
+  } catch (error) {
     res.status(400).json({
       success: false,
       error,

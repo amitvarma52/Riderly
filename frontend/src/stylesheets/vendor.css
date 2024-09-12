@@ -96,6 +96,8 @@
 }
 .edit-form h1 {
   font-size: 25px;
+  color: black;
+  padding: 5px;
   text-align: center;
 }
 @media (max-width: 600px) {

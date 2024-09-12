@@ -18,36 +18,37 @@ const VendorInformation = ({
   const [edit, setEdit] = useState(false);
   const [message, setMessage] = useState([]);
   const [showMessages, setShowMessages] = useState(false); // Toggle message visibility
-  const getMessage=()=>{
-if (vendorToken) {
-  axios
-    .post(
-      "http://localhost:8080/api/v1/car-rental/vendor/vendorMessage",
-      {
-        vendor: localStorage.getItem("vendorName"),
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + vendorToken,
-        },
-        timeout: 10000,
-      }
-    )
-    .then((response) => {
-      setMessage(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-  }
-  useEffect(() => {
-    getMessage()
-  });
+  const getMessage = () => {
+    if (vendorToken) {
+      axios
+        .post(
+          "http://localhost:8080/api/v1/car-rental/vendor/vendorMessage",
+          {
+            vendor: localStorage.getItem("vendorName"),
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + vendorToken,
+            },
+            timeout: 10000,
+          }
+        )
+        .then((response) => {
+          const data=response.data
+          setMessage(data.reverse());
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
   const handleShowMessages = () => {
     setShowMessages((prevState) => !prevState);
   };
+  useEffect(() => {
+    getMessage();
+  },[]);
 
   const fetchData = () => {
     if (vendorToken) {
@@ -58,7 +59,9 @@ if (vendorToken) {
           "Content-Type": "application/json",
           Authorization: "Bearer " + vendorToken,
         },
-        body: JSON.stringify({ fromVendor: localStorage.getItem("vendorName") }),
+        body: JSON.stringify({
+          fromVendor: localStorage.getItem("vendorName"),
+        }),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -82,7 +85,7 @@ if (vendorToken) {
     changeLoged(false);
     handleSetToken(null);
     setVehicles([]);
-    localStorage.removeItem("vendorName")
+    localStorage.removeItem("vendorName");
   };
   const changeEdit = (value) => {
     setEdit(value);

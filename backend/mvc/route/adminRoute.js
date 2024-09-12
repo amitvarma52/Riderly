@@ -10,6 +10,7 @@ import {
   vendorUpdateController,
 } from "../controller/adminController.js";
 import { authMiddle } from "../../authMiddleware.js";
+import { allMessage } from "../controller/messageController.js";
 const adminRouter = express.Router();
 
 // login
@@ -24,4 +25,6 @@ adminRouter.post("/admin/delete", authMiddle, vendorDelete);
 adminRouter.post("/admin/getOne", authMiddle, getVendorByID);
 // get all vendor
 adminRouter.get("/admin/allVendor", authMiddle, getAllVendor);
+// get all message
+adminRouter.get("/admin/allMessage", authMiddle, allMessage);
 export default adminRouter;

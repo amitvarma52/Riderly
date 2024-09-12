@@ -7,10 +7,36 @@ import Vendor from "./Vendor";
 import "../../stylesheets/vendor.css";
 import Loader from "../Loader";
 import AdminForm from "./AdminForm";
+import axios from "axios";
 const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
   const [vendors, setVendors] = useState([]);
   const [loader, setLoader] = useState(false);
   const [edit, setEdit] = useState(false);
+  const [message, setMessage] = useState([]);
+  const [showMessages, setShowMessages] = useState(false); // Toggle message visibility
+  const getMessage = () => {
+    if (adminToken) {
+      axios
+        .get("http://localhost:8080/api/v1/car-rental/admin/allMessage", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + adminToken,
+          },
+          timeout: 10000,
+        })
+        .then((response) => {
+          const data = response.data;
+          setMessage(data.reverse());
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+  useEffect(() => {
+    getMessage();
+  }, []);
+
   const fetchData = () => {
     if (adminToken) {
       setLoader(true);
@@ -35,6 +61,9 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
         });
     }
   };
+  const handleShowMessages = () => {
+    setShowMessages((prevState) => !prevState);
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -47,6 +76,7 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
   const changeEdit = (value) => {
     setEdit(value);
   };
+
   return (
     <>
       <ToastContainer />
@@ -95,6 +125,44 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
             ))}
         </tbody>
       </table>
+      {message.length > 0 && (
+        <>
+          <button className="message-btn" onClick={handleShowMessages}>
+            {showMessages ? "Hide Bookings" : "All Bookings"}
+          </button>
+
+          {/* Conditionally render the message table */}
+          {showMessages && (
+            <div className="message-table-container">
+              <h4>User Messages</h4>
+              <table className="message-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Vendor</th>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Vehicle</th>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {message.map((msg, index) => (
+                    <tr key={index}>
+                      <td>{new Date(msg.date).toLocaleDateString()}</td>
+                      <td>{msg.vendor}</td>
+                      <td>{msg.user}</td>
+                      <td>{msg.email}</td>
+                      <td>{msg.vehicleName}</td>
+                      <td>{msg.location}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </>
+      )}
     </>
   );
 };
