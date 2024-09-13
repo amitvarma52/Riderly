@@ -95,7 +95,7 @@ const VendorInformation = ({
       <ToastContainer />
       <div className="admin-header">
         <button onClick={() => setEdit(true)}>+</button>
-        <h1>Vendor Page</h1>
+        <h1 style={{background:"transparent",boxShadow:"none"}}>Vendor Page</h1>
         <button onClick={handleLogout}>Log-out</button>
       </div>
       {edit && (

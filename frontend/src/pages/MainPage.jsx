@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Courosal from "../components/Courasal.jsx";
 import { useNavigate } from "react-router-dom";
 import { objectActions, userActions } from "../store/Store.jsx";
-import axios from "axios";
+import axios, { all } from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "../stylesheets/message.css";
 const MainPage = () => {
@@ -13,36 +13,43 @@ const MainPage = () => {
   const user = useSelector((state) => state.user);
   const objects = useSelector((state) => state.object);
   const allObjects = objects.slice(0, 3);
+  console.log(objects)
   const locationObjects = objects
     .filter((element) => element.location === user.location)
     .slice(0, 3);
+    const newObjects = objects
+      .filter((element) => element.Date ==new Date().getFullYear())
+      .slice(0, 3);
   const dispatch = useDispatch();
   const [message, setMessage] = useState([]);
   const [showMessages, setShowMessages] = useState(false); // Toggle message visibility
+  const handleUserMessage=()=>{
+if (user) {
+  axios
+    .post(
+      "http://localhost:8080/api/v1/car-rental/user/userMessage",
+      {
+        user: user.name,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("rental-token"),
+        },
+        timeout: 10000,
+      }
+    )
+    .then((response) => {
+      setMessage(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+  }
   useEffect(() => {
-    if (user) {
-      axios
-        .post(
-          "http://localhost:8080/api/v1/car-rental/user/userMessage",
-          {
-            user: user.name,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + localStorage.getItem("rental-token"),
-            },
-            timeout: 10000,
-          }
-        )
-        .then((response) => {
-          setMessage(response.data);
-        })
-        .catch((error) => {
-          console.log(error)
-        });
-    }
-  },[]);
+    handleUserMessage()
+  }, []);
 
   const getObject = (token) => {
     axios
@@ -98,6 +105,7 @@ const MainPage = () => {
       <ToastContainer />
       <Courosal />
       <AllCards name="All" object={allObjects} to={"/all"} />
+      <AllCards name="From This Year " object={newObjects} to={"/all"} />
       <AllCards
         name="From Your Location"
         object={locationObjects}

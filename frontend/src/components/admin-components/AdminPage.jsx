@@ -118,7 +118,9 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
       <ToastContainer />
       <div className="admin-header">
         <button onClick={() => setEdit(true)}>+</button>
-        <h1>Admin Page</h1>
+        <h1 style={{ background: "transparent", boxShadow: "none" }}>
+          Admin Page
+        </h1>
         <button onClick={handleLogout}>Log-out</button>
       </div>
       {edit && (

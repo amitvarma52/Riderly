@@ -57,7 +57,7 @@
   color: orange;
 }
 .price::after {
-  content: "/hour";
+  content: "/day";
   color: gray;
 }
 .location {

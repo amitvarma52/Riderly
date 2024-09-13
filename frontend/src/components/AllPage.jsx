@@ -144,7 +144,7 @@ const AllPage = () => {
         ) : (
           filteredObjects.map((element) => (
             <Card
-              key={element.url}
+              key={element._id}
               fromVendor={element.fromVendor}
               url={element.image}
               url2={element.image2}

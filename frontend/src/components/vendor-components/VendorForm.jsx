@@ -53,7 +53,9 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
     <>
       <form action="" className="edit-form" onSubmit={handleAddVehicle}>
         <ToastContainer />
-        <h1>Add Vehicle</h1>
+        <h1 style={{ background: "transparent", boxShadow: "none" }}>
+          Add Vehicle
+        </h1>
         <MdCancel color="white" onClick={() => changeEdit(false)} />
         <input
           ref={vehicleName}

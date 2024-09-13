@@ -26,7 +26,7 @@ const ViewCard = () => {
     name,
     year,
     price,
-    mileage,
+    milegde,
     location: carLocation,
   } = data;
   const handleRent = (e) => {
@@ -57,7 +57,6 @@ const ViewCard = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.response.data, {
           position: "top-center",
           autoClose: 5000,
@@ -95,7 +94,7 @@ const ViewCard = () => {
           </h2>
           <p className="view-card-vendor">Vendor: {fromVendor}</p>
           <p className="view-card-location">Location: {carLocation}</p>
-          <p className="view-card-mileage">Mileage: {mileage} miles</p>
+          <p className="view-card-mileage">Mileage: {milegde} kmpl</p>
           <p className="view-card-price">Price: ${price} / day</p>
           <button className="view-card-rent-now-button" onClick={handleRent}>Rent Now</button>
         </div>
