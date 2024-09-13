@@ -4,6 +4,7 @@
 .main_div {
   width: 365px;
   background: rgb(139, 185, 205); 
+  background: rgb(139, 185, 205, 0.5);
   padding: 30px;
   border-radius: 5px;
   margin: 25px;
@@ -11,8 +12,8 @@
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 300;
   font-style: normal;
-  background: linear-gradient(to right, #5f2c82, #49a09d);
-  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  /* background: linear-gradient(to right, #5f2c82, #49a09d);
+  background-image: linear-gradient(to right, #00b4db, #0083b0); */
 
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
@@ -26,14 +27,14 @@
 }
 .form {
   height: 100vh;
-  background: url("https://comfortmytravel.com/wp-content/uploads/2022/08/Hire-Mercedes-Luxury-Car.jpg");
+  background: url("https://wallpapercave.com/wp/wp2691048.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: -100px;
   width: 100%;
   padding: 50px 0px;
-  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .main_div .social_icons {
   margin-top: 20px;

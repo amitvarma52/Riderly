@@ -147,9 +147,12 @@ const AllPage = () => {
               key={element.url}
               fromVendor={element.fromVendor}
               url={element.image}
+              url2={element.image2}
+              url3={element.image3}
               name={element.vehicleName}
               year={element.Date}
               price={element.price}
+              milegde={element.milegde}
               location={element.location}
             />
           ))

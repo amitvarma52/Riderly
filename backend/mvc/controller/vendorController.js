@@ -42,7 +42,17 @@ export const vendorLoginController = async (req, res) => {
 
 export const vehicleRegisterController = async (req, res) => {
   try {
-    const { fromVendor, vehicleName, image, Date, price, location } = req.body;
+    const {
+      fromVendor,
+      vehicleName,
+      image,
+      image2,
+      image3,
+      Date,
+      milegde,
+      price,
+      location,
+    } = req.body;
     const sameVehicle = await vehicleModel.findOne({ fromVendor, vehicleName });
     if(sameVehicle){
       return res.status(400).json("same vehicle already exists")
@@ -51,7 +61,10 @@ export const vehicleRegisterController = async (req, res) => {
       fromVendor,
       vehicleName,
       image,
+      image2,
+      image3,
       Date,
+      milegde,
       price,
       location,
     });

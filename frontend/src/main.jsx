@@ -14,6 +14,7 @@ import VendorPage from "./pages/VendorPage.jsx";
 import About from "./components/About.jsx";
 import AllPage from "./components/AllPage.jsx";
 import FeedbackForm from "./components/FeedBackForm.jsx";
+import ViewCard from "./components/ViewCard.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/all", element: <AllPage /> },
       { path: "/feedback", element: <FeedbackForm /> },
+      { path: "/view", element: <ViewCard /> },
     ],
   },
   { path: "/admin", element: <Admin /> },

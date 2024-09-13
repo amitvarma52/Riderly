@@ -15,6 +15,12 @@ const vehicleShema = mongoose.Schema(
       type: String,
       require: [true, "image link is required"],
     },
+    image2: {
+      type: String,
+    },
+    image3: {
+      type: String,
+    },
     Date: {
       type: Number,
       require: [true, "date is required"],
@@ -22,6 +28,10 @@ const vehicleShema = mongoose.Schema(
     price: {
       type: Number,
       require: [true, "price is required"],
+    },
+    milegde: {
+      type: Number,
+      require: [true, "milegde is required"],
     },
     location: {
       type: String,

@@ -30,7 +30,11 @@
   color: #f2f2f2;
   position: relative;
 }
-
+.enter{
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
 .logo::first-letter {
   color: #ff6347;
   font-size: 2.5rem;
