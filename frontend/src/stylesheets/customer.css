@@ -1,0 +1,88 @@
+.boongg-at-glance {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #b31515;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.boongg-at-glance h2 {
+  color: #ffffff; /* Softer red */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.boongg-at-glance h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #faf8f8;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.glance-items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.glance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glance-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.glance-item img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.glance-item:hover img {
+  transform: rotate(10deg);
+}
+
+.glance-item h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.glance-item p {
+  font-size: 1rem;
+  color: #e63946;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glance-items {
+    flex-direction: column;
+  }
+
+  .glance-item {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}

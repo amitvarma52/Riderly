@@ -1,0 +1,52 @@
+.how-it-works {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.step img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #918e8e;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    max-width: 100%;
+  }
+
+  .step img {
+    width: 80px;
+  }
+}

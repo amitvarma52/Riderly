@@ -25,7 +25,7 @@ const AllCards = ({ name, object, to }) => {
               location={element.location}
             />
           ))}
-        <div className="card">
+        <div className="card" style={{backgroundColor:"transparent"}}>
           <Link to={to}>
             more <FaArrowUpRightFromSquare size={30} />
           </Link>

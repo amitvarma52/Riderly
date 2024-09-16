@@ -10,6 +10,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "../stylesheets/message.css";
 import Testimonials from "../components/Testimonials.jsx";
 import RentBikeScooter from "../components/RentBike.jsx";
+import Customer from "../components/Customer.jsx";
 const MainPage = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
@@ -106,6 +107,7 @@ const MainPage = () => {
       <ToastContainer />
       <RentBikeScooter/>
       <Courosal />
+      <Customer/>
       <AllCards name="All" object={allObjects} to={"/all"} />
       <AllCards name="From This Year " object={newObjects} to={"/all"} />
       <AllCards

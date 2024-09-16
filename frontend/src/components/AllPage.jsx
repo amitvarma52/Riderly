@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Card from "./card";
 import "../stylesheets/filter.css";
 import { useNavigate } from "react-router-dom";
+import HowItWorks from "./HowWorks";
 
 const AllPage = () => {
   const objects = useSelector((state) => state.object);
@@ -62,6 +63,7 @@ const AllPage = () => {
 
   return (
     <>
+    <HowItWorks/>
       <div className="filter-section">
         <div>
           <label htmlFor="vendorFilter">Filter by Vendor: </label>

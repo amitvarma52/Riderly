@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: rgb(19, 17, 17);
 }
 
 .view-card-carousel-section {
@@ -22,7 +23,8 @@
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: #fff;
+  color: white;
+  background-color: #3c3737;
 }
 
 .view-card-title {
@@ -41,7 +43,7 @@
 
 .view-card-rent-now-button {
   padding: 12px 24px;
-  background-color: #007bff;
+  background-color: #e11414;
   color: white;
   border: none;
   border-radius: 5px;
