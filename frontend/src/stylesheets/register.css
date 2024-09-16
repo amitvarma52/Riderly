@@ -142,7 +142,9 @@ form .sign_up {
   margin-top: 25px;
 }
 .sign_up a {
-  color: #2e51dd;
+  color: #ffffff;
+  font-weight: 500;
+  /* font-size: 20px; */
 }
 form a {
   text-decoration: none;

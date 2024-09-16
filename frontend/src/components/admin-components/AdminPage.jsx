@@ -175,7 +175,6 @@ const AdminPage = ({ changeLoged, adminToken, handleSetToken }) => {
 
           {showMessages && (
             <div className="message-table-container">
-              <h4>User Messages</h4>
               <table className="message-table">
                 <thead>
                   <tr>

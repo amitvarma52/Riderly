@@ -95,7 +95,7 @@ const ViewCard = () => {
           <p className="view-card-vendor">Vendor: {fromVendor}</p>
           <p className="view-card-location">Location: {carLocation}</p>
           <p className="view-card-mileage">Mileage: {milegde} kmpl</p>
-          <p className="view-card-price">Price: ${price} / day</p>
+          <p className="view-card-price">Price: {price}rs / day</p>
           <button className="view-card-rent-now-button" onClick={handleRent}>Rent Now</button>
         </div>
       </div>

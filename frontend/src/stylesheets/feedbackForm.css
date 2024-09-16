@@ -5,6 +5,11 @@
   align-items: center;
   min-height: 90vh;
   background-color: #f4f4f4;
+  background: url("https://wallpapercave.com/wp/wp2691048.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: -100px;
   padding: 10px;
 }
 

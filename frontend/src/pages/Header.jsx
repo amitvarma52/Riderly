@@ -40,11 +40,11 @@ const Header = () => {
       </a>
 
       <div id="navigation-bar" className="nav-bar" ref={navbar}>
-        <Link to="/">Home</Link>
+        <Link to="/">HOME</Link>
         <Link to="all">All</Link>
         {/* <a href="#">Trending</a> */}
-        <Link to="/about">About</Link>
-        <Link to="feedback">Feedback</Link>
+        <Link to="/about">ABOUT</Link>
+        <Link to="feedback">FEEDBACK</Link>
       </div>
 
       <div

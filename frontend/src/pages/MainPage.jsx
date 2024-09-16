@@ -8,48 +8,49 @@ import { objectActions, userActions } from "../store/Store.jsx";
 import axios, { all } from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "../stylesheets/message.css";
+import Testimonials from "../components/Testimonials.jsx";
+import RentBikeScooter from "../components/RentBike.jsx";
 const MainPage = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const objects = useSelector((state) => state.object);
   const allObjects = objects.slice(0, 3);
-  console.log(objects)
   const locationObjects = objects
     .filter((element) => element.location === user.location)
     .slice(0, 3);
-    const newObjects = objects
-      .filter((element) => element.Date ==new Date().getFullYear())
-      .slice(0, 3);
+  const newObjects = objects
+    .filter((element) => element.Date == new Date().getFullYear())
+    .slice(0, 3);
   const dispatch = useDispatch();
   const [message, setMessage] = useState([]);
   const [showMessages, setShowMessages] = useState(false); // Toggle message visibility
-  const handleUserMessage=()=>{
-if (user) {
-  axios
-    .post(
-      "http://localhost:8080/api/v1/car-rental/user/userMessage",
-      {
-        user: user.name,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("rental-token"),
-        },
-        timeout: 10000,
-      }
-    )
-    .then((response) => {
-      setMessage(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-  }
+  const handleUserMessage = () => {
+    if (user) {
+      axios
+        .post(
+          "http://localhost:8080/api/v1/car-rental/user/userMessage",
+          {
+            user: user.name,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + localStorage.getItem("rental-token"),
+            },
+            timeout: 10000,
+          }
+        )
+        .then((response) => {
+          setMessage(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
   useEffect(() => {
-    handleUserMessage()
-  }, []);
+    handleUserMessage();
+  }, [user, localStorage.getItem("rental-token")]);
 
   const getObject = (token) => {
     axios
@@ -103,6 +104,7 @@ if (user) {
   return (
     <>
       <ToastContainer />
+      <RentBikeScooter/>
       <Courosal />
       <AllCards name="All" object={allObjects} to={"/all"} />
       <AllCards name="From This Year " object={newObjects} to={"/all"} />
@@ -111,15 +113,11 @@ if (user) {
         object={locationObjects}
         to={"/all"}
       />
-
-      {/* Show the button if messages are available */}
       {message.length > 0 && (
         <>
           <button className="message-btn" onClick={handleShowMessages}>
             {showMessages ? "Hide Bookings" : "Show Bookings"}
           </button>
-
-          {/* Conditionally render the message table */}
           {showMessages && (
             <div className="message-table-container">
               <h4>User Messages</h4>
@@ -151,6 +149,7 @@ if (user) {
           )}
         </>
       )}
+      <Testimonials/>
     </>
   );
 };

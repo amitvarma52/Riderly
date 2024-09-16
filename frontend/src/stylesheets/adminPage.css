@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .admin-header > :first-child {
   padding: 10px 25px;

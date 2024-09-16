@@ -61,7 +61,7 @@ const Card = ({ fromVendor, url, url2,url3, name, year, price,milegde, location 
       <ToastContainer />
       <div className="card">
         <Link to="/view" state={{ data: data }}>
-          <IoEnter color="red" className="enter" />
+          <IoEnter  className="enter"/>
         </Link>
         <img src={url}></img>
         <h3 className="year">{year}</h3>

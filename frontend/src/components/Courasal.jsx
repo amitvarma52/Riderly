@@ -1,5 +1,8 @@
-import React from 'react'
-import '../stylesheets/carousal.css'
+/** @format */
+
+import React from "react";
+import "../stylesheets/carousal.css";
+
 const Courasal = () => {
   return (
     <div className="hero">
@@ -14,10 +17,10 @@ const Courasal = () => {
       </div>
       <img
         src="https://us.123rf.com/450wm/stockgiu/stockgiu1903/stockgiu190304263/124737009-delivery-guy-in-motorcycle-with-map-vector-illustration-graphic-design.jpg?ver=6"
-        alt=""
+        alt="Bike Rental Illustration"
       />
     </div>
   );
-}
+};
 
-export default Courasal
+export default Courasal;

@@ -140,7 +140,6 @@ const VendorInformation = ({
           {/* Conditionally render the message table */}
           {showMessages && (
             <div className="message-table-container">
-              <h4>User Messages</h4>
               <table className="message-table">
                 <thead>
                   <tr>

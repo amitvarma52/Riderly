@@ -63,20 +63,17 @@ body {
 /* Heading */
 h1 {
   text-align: center;
-  color: #ffffff;
   font-size: 30px;
   padding: 50px 0;
-  background: linear-gradient(135deg, #007bff, #17a2b8);
-  border-radius: 12px;
-  margin: 0 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Card Component */
 .card {
+  width: 290px;
+  margin: 30px;
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -92,6 +89,7 @@ h1 {
 }
 
 .card img {
+  background-color: transparent;
   max-width: 100%;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -116,7 +114,16 @@ h1 {
   font-weight: bold;
   margin-top: auto;
 }
-
+.enter{
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  color: red;
+}
+.enter:hover{
+  transition: 0.4s;
+  color: blue;
+}
 .card .action-btn {
   margin-top: 15px;
   padding: 10px 20px;
