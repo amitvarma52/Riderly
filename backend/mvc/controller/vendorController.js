@@ -4,7 +4,7 @@ import { comparePassword, hashPassword } from "../../helper/hidePassword.js";
 import { vendorModel } from "../model/adminModel.js";
 import dotenv from "dotenv";
 import { vehicleModel } from "../model/vendorModel.js";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 dotenv.config();
 const VENDOR_SECRET = process.env.VENDOR_SECRET;
 
@@ -36,37 +36,19 @@ export const vendorLoginController = async (req, res) => {
     });
   } catch (error) {
     res.status(500).send("Internal server error");
-    console.log(error)
+    console.log(error);
   }
 };
 
 export const vehicleRegisterController = async (req, res) => {
   try {
-    const {
-      fromVendor,
-      vehicleName,
-      image,
-      image2,
-      image3,
-      Date,
-      milegde,
-      price,
-      location,
-    } = req.body;
+    const { fromVendor, vehicleName } = req.body;
     const sameVehicle = await vehicleModel.findOne({ fromVendor, vehicleName });
-    if(sameVehicle){
-      return res.status(400).json("same vehicle already exists")
+    if (sameVehicle) {
+      return res.status(400).json("same vehicle already exists");
     }
     const newVehicle = new vehicleModel({
-      fromVendor,
-      vehicleName,
-      image,
-      image2,
-      image3,
-      Date,
-      milegde,
-      price,
-      location,
+      ...req.body,
     });
 
     await newVehicle.save();
@@ -75,7 +57,7 @@ export const vehicleRegisterController = async (req, res) => {
       newVehicle,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return res.status(400).json({
       success: false,
       error: "Vehicle registration failed",

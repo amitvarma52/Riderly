@@ -1,22 +1,22 @@
 /** @format */
 
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "../stylesheets/rentBike.css";
 
 const RentBikeScooter = () => {
-  const locationRef = useRef(null);
-  const yearRef = useRef(null);
-  const vehicleTypeRef = useRef(null);
+  const locationRef = useRef();
+  const yearRef = useRef();
+  const vehicleTypeRef = useRef();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const location = locationRef.current.value;
-    const year = yearRef.current.value;
-    const vehicleType = vehicleTypeRef.current.value;
-
-    console.log("Location:", location);
-    console.log("Year:", year);
-    console.log("Vehicle Type:", vehicleType);
+  const handleFindClick = () => {
+    const data = {
+      location: locationRef.current?.value || "",
+      year: yearRef.current?.value || "",
+      type: vehicleTypeRef.current?.value || "",
+    };
+    navigate("/find", { state: { data } });
   };
 
   return (
@@ -25,7 +25,7 @@ const RentBikeScooter = () => {
         <div className="left-section">
           <h1>Rent Bike & Scooty</h1>
           <p className="subtitle">
-            Now In <span className="city-name">MUMBAI</span>
+            Now In <span className="city-name">CITY</span>
           </p>
           <p className="rating-info">
             10k+ | 4.6 Rating <span className="rating-stars">⭐⭐⭐⭐⭐</span>
@@ -39,20 +39,14 @@ const RentBikeScooter = () => {
             className="bike-image"
           />
           <div className="price-bubbles">
-            <span className="price-tag hourly">
-              Hourly Bike Rental <br /> Starts @ ₹39*
-            </span>
             <span className="price-tag daily">
               Daily Bike Rental <br /> Starts @ ₹349*
-            </span>
-            <span className="price-tag monthly">
-              Monthly Bike Rental <br /> Starts @ ₹3999*
             </span>
           </div>
         </div>
       </div>
 
-      <form className="rent-form" onSubmit={handleSubmit}>
+      <form className="rent-form">
         <div className="form-group">
           <label htmlFor="location">Location</label>
           <input
@@ -75,11 +69,11 @@ const RentBikeScooter = () => {
           <label htmlFor="vehicleType">Bike/Scooter</label>
           <select id="vehicleType" ref={vehicleTypeRef}>
             <option value="bike">Bike</option>
-            <option value="scooter">Scooter</option>
+            <option value="scooty">Scooty</option>
           </select>
         </div>
-        <button type="submit" className="rent-btn">
-          Rent now
+        <button type="button" className="rent-btn" onClick={handleFindClick}>
+          FIND
         </button>
       </form>
     </div>

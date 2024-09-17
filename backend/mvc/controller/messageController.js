@@ -11,9 +11,14 @@ export const sendMessage = async (req, res) => {
     const { vendor, user, vehicleName, email, location } = req.body;
 
     // Check if the message already exists
-    const exists = await messageModel.findOne({ vendor, user, vehicleName });
+    const exists = await messageModel.findOne({
+      vendor,
+      user,
+      vehicleName,
+      date: Date.now()
+    });
     if (exists) {
-      return res.status(409).send("Message already sent");
+      return res.status(409).send("Already booked");
     }
 
     // Create a new user with the current date

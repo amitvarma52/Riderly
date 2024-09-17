@@ -37,6 +37,10 @@ const vehicleShema = mongoose.Schema(
       type: String,
       require: [true, "location is required"],
     },
+    type: {
+      type: String,
+      require: [true, "type is required"],
+    },
   },
   { timestamp: true }
 );

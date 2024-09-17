@@ -1,8 +1,11 @@
-import axios from 'axios';
-import React, { useRef } from 'react'
-import { MdCancel } from 'react-icons/md';
-import { toast, ToastContainer } from 'react-toastify';
+/** @format */
+
+import axios from "axios";
+import React, { useRef } from "react";
+import { MdCancel } from "react-icons/md";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
   const vehicleName = useRef();
   const image = useRef();
@@ -12,9 +15,10 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
   const price = useRef();
   const milegde = useRef();
   const location = useRef();
+  const vehicleType = useRef(); // new ref for vehicle type
+
   const handleAddVehicle = (e) => {
     e.preventDefault();
-    ;
     axios
       .post(
         "http://localhost:8080/api/v1/car-rental/vendor/registerVehicle",
@@ -28,13 +32,14 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
           price: Number(price.current.value),
           milegde: Number(milegde.current.value),
           location: location.current.value,
+          type: vehicleType.current.value, 
         },
         {
           headers: {
             Authorization: "Bearer " + vendorToken,
             "Content-Type": "application/json",
           },
-          timeout: 10000, // Optional: timeout in milliseconds
+          timeout: 10000, 
         }
       )
       .then((response) => {
@@ -49,6 +54,7 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
         });
       });
   };
+
   return (
     <>
       <form action="" className="edit-form" onSubmit={handleAddVehicle}>
@@ -73,14 +79,14 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
         />
         <input
           ref={image2}
-          name="image"
+          name="image2"
           type="text"
           placeholder="image 2 url"
           required
         />
         <input
           ref={image3}
-          name="image"
+          name="image3"
           type="text"
           placeholder="image 3 url"
           required
@@ -113,10 +119,18 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
           placeholder="location"
           required
         />
+        {/* New select input for vehicle type */}
+        <select ref={vehicleType} name="vehicleType" required>
+          <option value="" disabled selected>
+            Select Vehicle Type
+          </option>
+          <option value="bike">Bike</option>
+          <option value="scooty">Scooty</option>
+        </select>
         <input type="submit" value="Add" />
       </form>
     </>
   );
 };
 
-export default VendorForm
+export default VendorForm;

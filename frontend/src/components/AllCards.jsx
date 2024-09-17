@@ -23,9 +23,10 @@ const AllCards = ({ name, object, to }) => {
               price={element.price}
               milegde={element.milegde}
               location={element.location}
+              type={element.type}
             />
           ))}
-        <div className="card" style={{backgroundColor:"transparent"}}>
+        <div className="card" style={{ backgroundColor: "transparent" }}>
           <Link to={to}>
             more <FaArrowUpRightFromSquare size={30} />
           </Link>

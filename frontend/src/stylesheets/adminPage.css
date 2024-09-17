@@ -3,7 +3,8 @@
 
 .admin-header {
   height: 25vh;
-  background: linear-gradient(to right, #5f2c82, #49a09d);
+  /* background: linear-gradient(to right, #5f2c82, #49a09d); */
+  background-color: rgb(233, 17, 17);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -36,7 +37,7 @@
  background-color: transparent;
 }
 .admin-header h1::first-letter {
-  color: #ff6347;
+  color: #5500ff;
   font-size: 2.5rem;
 }
 

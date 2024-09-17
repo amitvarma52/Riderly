@@ -43,6 +43,7 @@
   font-weight: 800;
   font-style: normal;
   text-align: center;
+  color: white;
   padding: 10px;
 }
 .edit-form {
@@ -58,15 +59,16 @@
   background-image: linear-gradient(to bottom right, #FF3E9D, #0E1F40);
   padding: 25px 30px;
   width: 35%;
-  top: 10vh;
+  top: 5vh;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 15px;
 }
 
-.edit-form input {
+.edit-form input,.edit-form select {
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 15px;
   outline: none;
   width: 96%;
   padding: 10px 5px;
@@ -111,7 +113,8 @@
     font-size: 20px;
   }
   .edit-form{
-    width: 75%;
+    width:92%;
     left: 20px;
+    margin: auto;
   }
 }

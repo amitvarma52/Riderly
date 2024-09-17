@@ -176,7 +176,8 @@ footer .wave#wave1 {
     top: 9rem;
     left: 0;
     width: 100%;
-    background: linear-gradient(to right, #5f2c82, #49a09d);
+    /* background: linear-gradient(to right, #5f2c82, #49a09d); */
+    background-color: rgb(224, 12, 12);
     text-align: center;
     z-index: 2;
   }

@@ -9,12 +9,13 @@ import HowItWorks from "./HowWorks";
 
 const AllPage = () => {
   const objects = useSelector((state) => state.object);
-  const navigate=useNavigate()
-  useEffect(()=>{
-    if(objects.length==0 ){
-        navigate('/')
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (objects.length === 0) {
+      navigate("/");
     }
-  })
+  }, [objects, navigate]);
+
   // State for filters
   const [vendorFilter, setVendorFilter] = useState("all");
   const [locationFilter, setLocationFilter] = useState("all");
@@ -22,8 +23,9 @@ const AllPage = () => {
   const [minPriceFilter, setMinPriceFilter] = useState("");
   const [maxPriceFilter, setMaxPriceFilter] = useState("");
   const [yearFilter, setYearFilter] = useState("");
+  const [typeFilter, setTypeFilter] = useState("all"); // New state for filtering by type
 
-  // Get unique vendors and locations from objects array
+  // Get unique vendors, locations, and types from objects array
   const uniqueVendors = [
     "all",
     ...new Set(objects.map((obj) => obj.fromVendor)),
@@ -32,6 +34,7 @@ const AllPage = () => {
     "all",
     ...new Set(objects.map((obj) => obj.location)),
   ];
+  const uniqueTypes = ["all", ...new Set(objects.map((obj) => obj.type))]; // Get unique types
 
   // Filter objects based on selected filters
   const filteredObjects = objects.filter((element) => {
@@ -51,19 +54,21 @@ const AllPage = () => {
     const yearMatch =
       yearFilter === "" ||
       (element.Date && String(element.Date).includes(yearFilter));
+    const typeMatch = typeFilter === "all" || element.type === typeFilter; // Filter by type
 
     return (
       vendorMatch &&
       locationMatch &&
       vehicleNameMatch &&
       priceMatch &&
-      yearMatch
+      yearMatch &&
+      typeMatch // Include type filter in the final condition
     );
   });
 
   return (
     <>
-    <HowItWorks/>
+      <HowItWorks />
       <div className="filter-section">
         <div>
           <label htmlFor="vendorFilter">Filter by Vendor: </label>
@@ -138,6 +143,22 @@ const AllPage = () => {
             placeholder="Enter year"
           />
         </div>
+
+        {/* New Filter for Type */}
+        <div>
+          <label htmlFor="typeFilter">Filter by Type: </label>
+          <select
+            id="typeFilter"
+            value={typeFilter}
+            onChange={(e) => setTypeFilter(e.target.value)}
+          >
+            {uniqueTypes.map((type, index) => (
+              <option key={index} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="vehicle-container">
@@ -156,6 +177,7 @@ const AllPage = () => {
               price={element.price}
               milegde={element.milegde}
               location={element.location}
+              type={element.type}
             />
           ))
         )}

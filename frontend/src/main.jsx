@@ -15,6 +15,7 @@ import About from "./components/About.jsx";
 import AllPage from "./components/AllPage.jsx";
 import FeedbackForm from "./components/FeedBackForm.jsx";
 import ViewCard from "./components/ViewCard.jsx";
+import FindCards from "./components/FindCards.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "/all", element: <AllPage /> },
       { path: "/feedback", element: <FeedbackForm /> },
       { path: "/view", element: <ViewCard /> },
+      { path: "/find", element: <FindCards /> },
     ],
   },
   { path: "/admin", element: <Admin /> },

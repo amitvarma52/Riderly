@@ -3,10 +3,22 @@
 import React from "react";
 import "../stylesheets/footer.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import '../stylesheets/call.css'
 const Footer = () => {
   return (
     <footer className="footer-container">
+      <a
+        href="https://wa.me/9152585867"
+        class="whatsapp-link"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+          alt="WhatsApp"
+        />
+      </a>
+
       <div className="footer-top-section">
         <h2 className="footer-main-title">Bike Rental In Mumbai</h2>
         <p className="footer-description">
@@ -43,7 +55,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom-section">
-        <div className="logo" style={{color:"white"}}>
+        <div className="logo" style={{ color: "white" }}>
           <p>Riderly</p>
         </div>
         <p className="footer-tagline">Get Ahead Of The Road</p>
