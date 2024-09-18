@@ -75,7 +75,7 @@ const Login = () => {
           <div className="title">Login</div>
           <form action="#">
             <div className="input_box">
-              <input type="text" placeholder="Name" ref={email} required />
+              <input type="text" placeholder="Email" ref={email} required />
               <div className="icon">
                 <i className="fas fa-user"></i>
               </div>

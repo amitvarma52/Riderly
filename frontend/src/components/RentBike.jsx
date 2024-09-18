@@ -25,7 +25,7 @@ const RentBikeScooter = () => {
         <div className="left-section">
           <h1>Rent Bike & Scooty</h1>
           <p className="subtitle">
-            Now In <span className="city-name">CITY</span>
+            Now In <span className="city-name">YOUR CITY</span>
           </p>
           <p className="rating-info">
             10k+ | 4.6 Rating <span className="rating-stars">⭐⭐⭐⭐⭐</span>

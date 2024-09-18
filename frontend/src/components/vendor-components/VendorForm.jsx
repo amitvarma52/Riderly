@@ -57,7 +57,7 @@ const VendorForm = ({ changeEdit, vendorToken, fetchData }) => {
 
   return (
     <>
-      <form action="" className="edit-form" onSubmit={handleAddVehicle}>
+      <form action="" className="edit-form" onSubmit={handleAddVehicle} style={{top:"120px"}}>
         <ToastContainer />
         <h1 style={{ background: "transparent", boxShadow: "none" }}>
           Add Vehicle

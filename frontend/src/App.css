@@ -167,7 +167,7 @@ footer .wave#wave1 {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  background-color: #131212;
+  background-color: #ffffff;
 }
 @media screen and (max-width: 600px) {
   .nav-bar {

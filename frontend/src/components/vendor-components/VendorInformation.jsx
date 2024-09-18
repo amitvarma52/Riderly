@@ -107,7 +107,7 @@ const VendorInformation = ({
       )}
       {loader && <Loader />}
       {!vehicles.length == 0 ? (
-        <h1 className="vendors-list"> VEHICLEs LIST</h1>
+        <h1 className="vendors-list" style={{marginTop:"-20px"}}> VEHICLEs LIST</h1>
       ) : (
         <h1 className="vendors-list">vehicle's list is empty</h1>
       )}

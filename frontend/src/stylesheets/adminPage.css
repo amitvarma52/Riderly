@@ -14,7 +14,7 @@
   padding: 10px 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-size: 50px;
-  background-color: rgb(208, 1, 255);
+  background-color: rgb(172, 11, 200);
   color: white;
   font-weight: bold;
   border: none;
@@ -22,10 +22,10 @@
   top: 50%;
 }
 .admin-header > :last-child {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
   padding: 15px 20px;
-  background-color: rgb(191, 0, 0);
-  color: white;
+  background-color: rgb(60, 0, 255);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   border: none;
 }
@@ -64,4 +64,7 @@
     .admin-header{
       width: 100%;
     }
+}
+body{
+  background-color: white;
 }

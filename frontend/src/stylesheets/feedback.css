@@ -1,7 +1,7 @@
 /* Floating Feedback Button */
 .feedback-btn {
   position: fixed;
-  bottom: 470px;
+  bottom: 100px;
   right: 20px;
   background-color: #007bff; /* Bright blue button */
   color: white;

@@ -45,7 +45,7 @@ const AdminForm = ({ changeEdit, adminToken, fetchData }) => {
   };
   return (
     <>
-      <form action="" className="edit-form" onSubmit={handleAddVendor}>
+      <form action="" className="edit-form" onSubmit={handleAddVendor} style={{top:"180px"}}>
         <ToastContainer />
         <h1 style={{ background: "transparent", boxShadow: "none" }}>
           Add Vendor
